@@ -17,6 +17,8 @@ function ping()
 {
   if (process.env.DISABLED == "YES") return;
   
+  console.log("---");
+  
   fs.readFile("data/urls.json", "utf8", function(err, contents) {
     
       //try {
