@@ -1,15 +1,22 @@
 const fs = require("fs");
 const http = require("http");
+const request = require("request");
 
 function pingURL(url)
 {
  return new Promise((res, rej) => {
-   
+   request(url, (err, res, body) => {
+     if (err) rej(res.statusCode);
+     
+     res();
+   });
  });
 }
 
 function ping()
 {
+  if (process.env.DISABLED == "YES") return;
+  
   fs.readFile("data/urls.json", "utf8", function(err, contents) {
     if (!err)
     {
