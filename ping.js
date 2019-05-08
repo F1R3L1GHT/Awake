@@ -4,11 +4,11 @@ const request = require("request");
 
 function pingURL(url)
 {
- return new Promise((res, rej) => {
-   request(url, (err, res, body) => {
-     if (err) rej(res.statusCode);
+ return new Promise((resp, rej) => {
+   request(url,{ headers: { 'User-Agent': 'Awake-Glitch' } }, (err, res, body) => {
+     if (err) {rej(res.statusCode)} else {resp();}
      
-     res();
+     //res();
    });
  });
 }
@@ -18,24 +18,22 @@ function ping()
   if (process.env.DISABLED == "YES") return;
   
   fs.readFile("data/urls.json", "utf8", function(err, contents) {
-    if (!err)
-    {
-      try {
+    
+      //try {
         let j = JSON.parse(contents);
         
         j.forEach((url) => {
-          url.then(() => {
+          pingURL(url).then(() => {
             console.log(`Sucessfully pinged ${url}!`);
           }).catch((status) => {
             console.log(`Unable to ping ${url}! Status code: ${status}.`);
           });
         });
-      } catch(e) {
-        return;
-      }
-    } else {
-     return; 
-    }
+      /*} catch(e) {
+        console.log("Unable to parse!");
+      }*/
+  
+    
   });
 }
 
