@@ -33,9 +33,9 @@
     <main>
       <p class="bold">Welcome!</p>
       
-      <p>Use this tool to keep your Glitch projects online! If you need help or would like to remove your URL from our service please use <a>this thread</a> to contact me!</p>
+      <p>This page is used for admins to remove URLs from the database.</p>
       
-      <form action="/removeurl">
+      <form action="/removeurl" onsubmit="return(validate());">
         <input name="url" type="text" maxlength="100" placeholder="https://www.example.com" aria-labelledby="submit-dream" id="input_url" required>
         <input name="adminkey" type="text" maxlength="100" placeholder="Admin Key" required>
         <button type="submit" id="submit-dream">Remove URL</button>

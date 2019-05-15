@@ -16,6 +16,21 @@ app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/admin', function(request, response) {
+  response.sendFile(__dirname + '/views/admin.html');
+});
+
+app.get('/addurl', function(request, response) {
+   
+});
+
+function addUrl(url)
+{
+  return new Promise((res, rej) => {
+    res();
+  });
+}
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
