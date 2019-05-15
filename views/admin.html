@@ -26,7 +26,7 @@
   <body>
     <header>
       <h1>
-        Awake!
+        Awake! Admin
       </h1>
     </header>
 
@@ -35,9 +35,10 @@
       
       <p>Use this tool to keep your Glitch projects online! If you need help or would like to remove your URL from our service please use <a>this thread</a> to contact me!</p>
       
-      <form>
-        <input name="url" type="text" maxlength="100" placeholder="https://www.example.com" aria-labelledby="submit-dream">
-        <button type="submit" id="submit-dream">Submit URL</button>
+      <form action="/removeurl">
+        <input name="url" type="text" maxlength="100" placeholder="https://www.example.com" aria-labelledby="submit-dream" id="input_url" required>
+        <input name="adminkey" type="text" maxlength="100" placeholder="Admin Key" required>
+        <button type="submit" id="submit-dream">Remove URL</button>
       </form>
       
       <section class="dreams">

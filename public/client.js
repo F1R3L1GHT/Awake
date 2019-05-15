@@ -21,19 +21,23 @@ function validate()
   
   if (!validURL(urlin))
   {
+    console.log("Invalid Step #1");
     alert("Invalid URL");
    return false; 
   } else {
    if (urlin.length >= 9)
    {
-     if ((urlin.substring(0, 8) == "http://") || (urlin.substring(0, 9) == "https://"))
+     if ((urlin.substring(0, 7) == "http://") || (urlin.substring(0, 8) == "https://"))
      {
        return true;
      } else {
-       alert("Invalid URL");
+       console.log(urlin.substring(0, 9))
+       console.log("Invalid URL Step #3");
+       alert("Invalid URL! Make sure to add http:// or https:// infront of your URL");
       return false;
      }
    } else {
+     console.log("Invalid Step #2");
      alert("Invalid URL");
     return false;
    }

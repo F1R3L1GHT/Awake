@@ -35,8 +35,8 @@
       
       <p>Use this tool to keep your Glitch projects online! If you need help or would like to remove your URL from our service please use <a>this thread</a> to contact me!</p>
       
-      <form onsubmit="return(validate());">
-        <input name="url" type="text" maxlength="100" id="input_url" placeholder="https://www.example.com" aria-labelledby="submit-dream">
+      <form action="/addurl" onsubmit="return(validate());">
+        <input name="url" type="text" maxlength="100" id="input_url" placeholder="https://www.example.com" aria-labelledby="submit-dream" required>
         <button type="submit" id="submit-dream">Submit URL</button>
       </form>
       
