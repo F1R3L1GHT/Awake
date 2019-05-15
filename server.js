@@ -21,7 +21,23 @@ app.get('/admin', function(request, response) {
 });
 
 app.get('/addurl', function(request, response) {
-   
+   var url = request.query["url"];
+  
+  if (url != undefined)
+  {
+   addUrl(url).then(() => {
+     response.send('Your URL has been added! If you would like to go home please click <a href="https://awake.glitch.me/">here</a>');
+   }).catch((reason) => {
+     if (reason == "URL_IN_DB")
+     {
+       response.send('Your URL is already in our database! If you would like to go home please click <a href="https://awake.glitch.me/">here</a>');
+     } else {
+      response.send('Failed to add your URL! Please <a href="https://awake.glitch.me/">try again</a>.'); 
+     }
+   });
+  } else {
+    response.send('Failed to add your URL! Please <a href="https://awake.glitch.me/">try again</a>.');
+  }
 });
 
 function addUrl(url)
