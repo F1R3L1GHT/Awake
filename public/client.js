@@ -3,9 +3,41 @@
 
 console.log('hello world :o');
 
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
+
 function validate()
 {
-  document.getElementById("input_url")  
+  var urlin = document.getElementById("input_url").value;
+  
+  console.log(urlin);
+  
+  if (!validURL(urlin))
+  {
+    alert("Invalid URL");
+   return false; 
+  } else {
+   if (urlin.length >= 9)
+   {
+     if ((urlin.substring(0, 8) == "http://") || (urlin.substring(0, 9) == "https://"))
+     {
+       return true;
+     } else {
+       alert("Invalid URL");
+      return false;
+     }
+   } else {
+     alert("Invalid URL");
+    return false;
+   }
+  }
 }
 
 /*
