@@ -46,6 +46,10 @@ function addUrl(url)
   return new Promise((res, rej) => {
     fs.readFile(".data/urls.json", "utf8", function(err, contents) {
       var j = JSON.parse(contents);
+      j.push(url);
+      fs.writeFile(".data/urls.json", JSON.stringify(j), 'utf8', () => {
+        res();
+      });
     });
   });
 }
