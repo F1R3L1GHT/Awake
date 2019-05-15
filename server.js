@@ -4,6 +4,7 @@
 // init project
 const express = require('express');
 const app = express();
+const fs = require("fs");
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -43,7 +44,9 @@ app.get('/addurl', function(request, response) {
 function addUrl(url)
 {
   return new Promise((res, rej) => {
-    res();
+    fs.readFile(".data/urls.json", "utf8", function(err, contents) {
+      var j = JSON.parse(contents);
+    });
   });
 }
 
