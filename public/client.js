@@ -2,6 +2,12 @@
 // run by the browser each time your view template is loaded
 
 console.log('hello world :o');
+
+function validate()
+{
+  document.getElementById("input_url")  
+}
+
 /*
 // our default array of dreams
 const dreams = [
