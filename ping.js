@@ -19,7 +19,7 @@ function ping()
   
   console.log("---");
   
-  fs.readFile("data/urls.json", "utf8", function(err, contents) {
+  fs.readFile(".data/urls.json", "utf8", function(err, contents) {
     
       //try {
         let j = JSON.parse(contents);
