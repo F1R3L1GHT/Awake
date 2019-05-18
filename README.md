@@ -1,27 +1,17 @@
-Welcome to Glitch
+Awake!
 =================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+Awake! is designed to keep your websites online 24x7!
 
 
-Your Project
-------------
+Files
+-----
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+`ping.js` is responsible for keeping the websites up 24x7
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+`server.js` is responsible for managing HTTP requests.
 
-
-Made by [Glitch](https://glitch.com/)
+Made by xXProGamerXx. Powered by [Glitch](https://glitch.com/)
 -------------------
 
 \ ゜o゜)ノ
