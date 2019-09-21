@@ -6,7 +6,7 @@ function pingURL(url)
 {
  return new Promise((resp, rej) => {
    request(url,{ headers: { 'User-Agent': 'Awake-Glitch' } }, (err, res, body) => {
-     if (err) {rej(res.statusCode)} else {resp();}
+     if (err) {rej()} else {resp();}
      
      //res();
    });
@@ -28,7 +28,7 @@ function ping()
           pingURL(url).then(() => {
             console.log(`Sucessfully pinged ${url}!`);
           }).catch((status) => {
-            console.log(`Unable to ping ${url}! Status code: ${status}.`);
+            console.log(`Unable to ping ${url}! Status code: NuLl.`);
           });
         });
       /*} catch(e) {
