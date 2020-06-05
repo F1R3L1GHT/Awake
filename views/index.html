@@ -1,56 +1,57 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Awake!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.3.1/dist/siimple.min.css">
-    <meta name="description" content="Keep your sites online!">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-    <!-- import the webpage's client-side javascript file -->
-    <script src="/client.js" defer></script>
+    <!-- SEO -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/siimple@3.3.1/dist/siimple.min.css"
+    />
+    <meta name="description" content="Keep your sites online!" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header>
-      <h1>
-        Awake!
-      </h1>
-    </header>
-
-    <main>
-      <p class="bold">Welcome!</p>
-      
-      <p>Use this tool to keep your Glitch projects online! If you need help or would like to remove your URL from our service please use <a>this thread</a> to contact me!</p>
-      
-      
-      
-      <section class="dreams">
-        <ul id="dreams"></ul>
-      </section>
-    </main>
-
-    <footer>
-      Made by xXProGamerXx! Powered by <a href="https://glitch.com">Glitch</a>!
-    </footer>
-
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-
+    <div class="siimple-navbar siimple-navbar--primary siimple-navbar--fluid">
+      <a class="siimple-navbar-title">Awake!</a>
+      <div class="siimple--float-right">
+        <a class="siimple-navbar-item">Submit</a>
+        <a class="siimple-navbar-item">Remove</a>
+        <a class="siimple-navbar-item">About</a>
+      </div>
+    </div>
+    <center>
+      <div
+        class="siimple-jumbotron siimple-jumbotron--primary siimple-jumbotron--fluid"
+      >
+        <div class="siimple-jumbotron-title">
+          Awake - The Original Autopinger, Build for Glitch
+        </div>
+        <div class="siimple-jumbotron-subtitle">
+          Just add your url to have your project online 24/7!
+        </div>
+        <div class="siimple-jumbotron-detail">
+          <form action="/addurl" onsubmit="return(validate());">
+            <input
+              name="url"
+              type="text"
+              maxlength="100"
+              id="input_url"
+              placeholder="https://www.example.com"
+              aria-labelledby="submit-dream"
+              required
+            />
+            <button type="submit" id="submit-dream">Submit URL</button>
+          </form>
+        </div>
+      </div>
+    </center>
   </body>
 </html>
