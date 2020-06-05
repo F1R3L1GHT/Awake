@@ -21,6 +21,14 @@ app.get('/admin', function(request, response) {
   response.sendFile(__dirname + '/views/admin.html');
 });
 
+app.get('/about', function(request, response) {
+  response.sendFile(__dirname + '/views/about.html');
+});
+
+app.get('/remove', function(request, response) {
+  response.sendFile(__dirname + '/views/remove.html');
+});
+
 app.get('/addurl', function(request, response) {
    var url = request.query["url"];
   
