@@ -27,7 +27,7 @@ app.get('/addurl', function(request, response) {
   if (url != undefined)
   {
    addUrl(url).then(() => {
-     response.send('Your URL has been added! If you would like to go home please click <a href="https://awake.glitch.me/">here</a>');
+     response.send('<meta http-equiv="refresh" content="2;url=/done" />');
    }).catch((reason) => {
      if (reason == "URL_IN_DB")
      {
